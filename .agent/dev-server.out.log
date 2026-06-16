@@ -1,0 +1,32 @@
+
+> temp-app@0.1.0 dev
+> next dev --hostname 0.0.0.0 --port 3000
+
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+- Environments: .env.local
+✓ Ready in 579ms
+Creating turbopack project {
+  dir: 'C:\\Users\\claud\\OneDrive\\Documentos\\NeuroAds\\LP',
+  testMode: true
+}
+- Experiments (use with caution):
+  · serverActions
+
+ GET / 200 in 1014ms (next.js: 199ms, application-code: 815ms)
+ GET / 200 in 111ms (next.js: 6ms, application-code: 106ms)
+ GET /hub 200 in 154ms (next.js: 98ms, application-code: 55ms)
+ GET /hub/agente/seo-geo 200 in 805ms (next.js: 761ms, application-code: 44ms)
+ POST /hub/agente/seo-geo 200 in 17.1s (next.js: 14ms, application-code: 17.1s)
+  └─ ƒ generateSeoGeoAudit({"businessContext":"","websiteUrl":"https://neuroads.com.br"}) in 16841ms src/app/actions/seo-geo-audit.ts
+ GET / 200 in 24ms (next.js: 5ms, application-code: 19ms)
+✓ Compiled in 2.3s
+ GET / 200 in 1571ms (next.js: 380ms, application-code: 1191ms)
+✓ Compiled in 261ms
+✓ Compiled in 1484ms
+ GET / 200 in 546ms (next.js: 113ms, application-code: 433ms)
+ GET /hub 200 in 55ms (next.js: 8ms, application-code: 47ms)
+ GET / 200 in 20ms (next.js: 3ms, application-code: 17ms)
+ GET / 200 in 238ms (next.js: 3ms, application-code: 235ms)
+ GET / 200 in 594ms (next.js: 41ms, application-code: 554ms)
