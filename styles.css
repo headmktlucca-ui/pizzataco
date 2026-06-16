@@ -50,8 +50,22 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, .font-serif {
+h1, h4, .font-serif {
   font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -377,11 +391,11 @@ a {
 }
 
 .sobre-title, .section-title {
-  font-size: 2.2rem;
+  font-size: 3.5rem;
   color: var(--color-primary);
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .sobre-description {
@@ -474,6 +488,7 @@ a {
 .sabores-slider-container {
   position: relative;
   width: 100%;
+  min-width: 0; /* Fixes CSS Grid item expansion overflow on mobile */
 }
 
 .sabores-track {
@@ -495,6 +510,28 @@ a {
   height: 380px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(26, 51, 30, 0.05);
+}
+
+/* Responsive grid layout for Sabores section on desktop viewports */
+@media (min-width: 1024px) {
+  .sabores-track {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .sabor-card {
+    flex: 0 1 calc(33.333% - 1rem);
+    min-width: 240px;
+    height: 380px;
+  }
+
+  .sabores-arrow-overlay {
+    display: none !important;
+  }
 }
 
 .sabor-card img {
@@ -566,7 +603,8 @@ a {
   min-height: 550px;
 }
 
-.eventos-img-side img {
+.eventos-img-side img,
+.eventos-img-side video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1300,7 +1338,7 @@ a {
     padding: 4rem 2rem;
   }
   .sabores-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
     padding: 0 2rem;
   }

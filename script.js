@@ -93,9 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (heroImageSide && sliderPrev && sliderNext) {
     const slideImages = [
-      'assets/hero_party.png',
-      'assets/event_setup.png',
-      'assets/chef_cooking.png'
+      'assets/hero_slide_1.png',
+      'assets/hero_slide_2.png',
+      'assets/hero_slide_3.png',
+      'assets/hero_slide_4.png'
     ];
     let currentSlide = 0;
     
