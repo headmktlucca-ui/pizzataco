@@ -40,6 +40,7 @@
         <li><button data-target="#sabores" class="navbar-link">Sabores</button></li>
         <li><button data-target="#eventos" class="navbar-link">Eventos</button></li>
         <li><button data-target="#galeria" class="navbar-link">Galeria</button></li>
+        <li><button data-target="#blog" class="navbar-link">Blog</button></li>
         <li><button data-target="#faq" class="navbar-link">FAQ</button></li>
         <li><button data-target="#simulador" class="navbar-link">Contato</button></li>
       </ul>
@@ -533,6 +534,19 @@
         </article>
       </div>
     </section>
+
+    <!-- Blog Section -->
+    <section class="section-blog" id="blog">
+      <div class="blog-container reveal-element">
+        <div class="blog-header">
+          <h2 class="section-title">Além do Forno</h2>
+          <p>Artigos, dicas e bastidores sobre a arte de criar eventos gastronômicos memoráveis</p>
+        </div>
+        <div class="blog-grid" id="blog-posts-container">
+          <!-- Rendered dynamically via JS -->
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer Section -->
@@ -557,6 +571,7 @@
           <li><button data-target="#sabores" class="footer-link-btn">Sabores</button></li>
           <li><button data-target="#eventos" class="footer-link-btn">Eventos</button></li>
           <li><button data-target="#galeria" class="footer-link-btn">Galeria</button></li>
+          <li><button data-target="#blog" class="footer-link-btn">Blog</button></li>
           <li><button data-target="#faq" class="footer-link-btn">FAQ</button></li>
         </ul>
       </div>
@@ -576,6 +591,18 @@
       <p>Desenvolvido com foco em alta performance e experiência gastronômica premium.</p>
     </div>
   </footer>
+
+  <!-- Blog Article Modal Overlay -->
+  <div class="blog-modal-overlay" id="blog-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="blog-modal-card">
+      <button class="blog-modal-close" id="blog-modal-close" aria-label="Fechar artigo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="blog-modal-content" id="blog-modal-content">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </div>
 
   <!-- Javascript Core Logic -->
   <script src="script.js"></script>

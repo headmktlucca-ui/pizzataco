@@ -482,4 +482,254 @@ Gostaria de verificar a disponibilidade de datas!`;
   } else {
     revealElements.forEach(el => el.classList.add('revealed'));
   }
+
+  // ==========================================
+  // 10. Blog Section Logic (Articles Database & Modal Controls)
+  // ==========================================
+  const blogPosts = [
+    {
+      id: "show-cooking-corporate",
+      category: "Corporativo",
+      date: "16 de Junho de 2026",
+      readTime: "4 min de leitura",
+      title: "Show Cooking: Como a Gastronomia ao Vivo Transforma Eventos Corporativos em Experiências de Conexão",
+      image: "assets/blog_corporate_catering.png",
+      excerpt: "Descubra como levar o preparo artesanal de pizzas e tacos mexicanos ao vivo para sua empresa pode quebrar o gelo, engajar colaboradores e surpreender clientes importantes em confraternizações.",
+      content: `
+        <span class="article-meta">Corporativo • 16 de Junho de 2026 • 4 min de leitura</span>
+        <h1 class="article-title" id="modal-title">Show Cooking: Como a Gastronomia ao Vivo Transforma Eventos Corporativos em Experiências de Conexão</h1>
+        <img class="article-image" src="assets/blog_corporate_catering.png" alt="Chef preparando pizza-taco em evento corporativo">
+        <div class="article-body">
+          <p>No cenário empresarial moderno, as confraternizações e eventos de networking deixaram de ser apenas reuniões formais com salgadinhos frios. Hoje, as organizações buscam criar momentos que realmente engajem, marquem a memória dos convidados e fortaleçam as relações comerciais. É aí que entra o conceito de <strong>Show Cooking</strong>.</p>
+          
+          <p>Preparar pratos sofisticados ao vivo, diante dos olhos dos convidados, vai além de simplesmente servir comida. É uma forma de entretenimento ativo, uma atração gastronômica que gera conversa, desperta curiosidade e aproxima as pessoas de forma natural.</p>
+          
+          <h3>Quebrando o Gelo com Gastronomia</h3>
+          <p>Diferente de um buffet tradicional em que os convidados apenas se servem em uma fila silenciosa, o show cooking de pizzas artesanais e tacos mexicanos cria uma estação de calor e energia. Os convidados assistem à abertura das massas fermentadas lentamente, escolhem os recheios premium na hora e conversam diretamente com os chefes de cozinha.</p>
+          <blockquote>"A comida preparada ao vivo quebra as barreiras hierárquicas e estimula diálogos genuínos entre colaboradores e clientes importantes."</blockquote>
+
+          <h3>Praticidade e Sofisticação na Medida Certa</h3>
+          <p>Para o setor de recursos humanos ou marketing que planeja o evento, o show cooking oferece uma infraestrutura completamente independente. A equipe da Pizza Taco monta estações de live cooking organizadas, limpas e rápidas, adaptando-se tanto a escritórios modernos (roof tops, varandas corporativas) quanto a espaços de eventos tradicionais. É a fusão perfeita entre a descontração rústica dos tacos e a elegância de pizzas napolitanas assadas em fornos de pedra de alta temperatura.</p>
+
+          <h3>Benefícios para seu Evento Empresarial:</h3>
+          <ul>
+            <li><strong>Estação de Networking Ativo:</strong> A preparação gera pontos naturais de parada e conversa espontânea.</li>
+            <li><strong>Experiência Personalizada:</strong> Cada convidado monta sua pizza ou taco de acordo com suas preferências alimentares (incluindo opções vegetarianas).</li>
+            <li><strong>Branding Indireto:</strong> Associar sua marca a uma experiência gastronômica memorável e de alta qualidade gera excelente reputação pós-evento.</li>
+          </ul>
+          
+          <p>Planejar o próximo evento da sua empresa com uma experiência ao vivo é garantir que seus parceiros e colaboradores lembrem da data por muito tempo.</p>
+        </div>
+      `
+    },
+    {
+      id: "casamento-rustico-chic",
+      category: "Casamentos",
+      date: "10 de Junho de 2026",
+      readTime: "5 min de leitura",
+      title: "Casamento Rústico-Chique: O Charme do Buffet Artesanal de Pizza e Taco ao Vivo",
+      image: "assets/blog_wedding_catering.png",
+      excerpt: "Casamentos ao ar livre ou no campo pedem menus que transmitam calor, afeto e originalidade. Veja por que o buffet artesanal ao vivo é a escolha ideal para recepções modernas.",
+      content: `
+        <span class="article-meta">Casamentos • 10 de Junho de 2026 • 5 min de leitura</span>
+        <h1 class="article-title" id="modal-title">Casamento Rústico-Chique: O Charme do Buffet Artesanal de Pizza e Taco ao Vivo</h1>
+        <img class="article-image" src="assets/blog_wedding_catering.png" alt="Buffet rústico de casamento com pizza-tacos artesanais">
+        <div class="article-body">
+          <p>A busca por casamentos mais intimistas, autênticos e conectados com a natureza trouxe à tona a estética do <strong>rústico-chique</strong>. Casamentos realizados no campo, em praias ou galpões históricos decorados com luzes de filamento pedem um menu que acompanhe essa mesma energia de aconchego, elegância e proximidade.</p>
+          
+          <p>Os casais contemporâneos têm preferido substituir os jantares formais empratados por buffets dinâmicos de alta gastronomia que promovam interação e descontração de forma sofisticada.</p>
+          
+          <h3>Show Cooking como Atração no Casamento</h3>
+          <p>O buffet artesanal de pizza e tacos mexicanos ao vivo se encaixa perfeitamente nessa proposta. Ver a fumaça sutil saindo dos fornos portáteis de pedra, o cheiro de manjericão fresco e a montagem das tortilhas aquecidas na hora transforma o buffet em parte da cenografia da festa.</p>
+          <blockquote>"Mais do que servir uma refeição, levamos um show culinário interativo que celebra o afeto e a partilha."</blockquote>
+
+          <h3>Sofisticação nos Insumos Premium</h3>
+          <p>Optar por pizza e tacos não significa abrir mão do luxo. A sofisticação está na curadoria dos ingredientes: mozzarellas artesanais, presunto cru de Parma, pepperoni curado com mel picante silvestre, rúcula baby fresca e jalapeños selecionados. A massa de longa fermentação (48h) confere leveza incomparável, permitindo que os convidados aproveitem a pista de dança sem a sensação de estômago pesado.</p>
+
+          <h3>Por que escolher buffet ao vivo para casamentos?</h3>
+          <ul>
+            <li><strong>Cardápio Dinâmico e Democrático:</strong> Agrada a todas as idades, desde crianças até os paladares mais exigentes.</li>
+            <li><strong>Clima Acolhedor:</strong> Combina perfeitamente com casamentos no campo, mini weddings e recepções vespertinas.</li>
+            <li><strong>Serviço Contínuo:</strong> A comida é servida quente e fresca durante todo o período da recepção, eliminando filas frias de buffets tradicionais.</li>
+          </ul>
+          
+          <p>Se o objetivo é criar um dia inesquecível e cheio de personalidade para seus convidados, o show cooking rústico-gourmet é a receita ideal.</p>
+        </div>
+      `
+    },
+    {
+      id: "guia-de-harmonizacao",
+      category: "Experiência Gourmet",
+      date: "05 de Junho de 2026",
+      readTime: "3 min de leitura",
+      title: "Guia de Harmonização: Vinhos e Cervejas Artesanais para Acompanhar Pizza-Tacos",
+      image: "assets/blog_wine_pairing.png",
+      excerpt: "Eleve o nível do cardápio do seu evento combinando as criações artesanais da Pizza Taco com vinhos selecionados e cervejas artesanais. Dicas simples de sommelier.",
+      content: `
+        <span class="article-meta">Experiência Gourmet • 05 de Junho de 2026 • 3 min de leitura</span>
+        <h1 class="article-title" id="modal-title">Guia de Harmonização: Vinhos e Cervejas Artesanais para Acompanhar Pizza-Tacos</h1>
+        <img class="article-image" src="assets/blog_wine_pairing.png" alt="Copos de vinho e cerveja artesanal ao lado de pizza-tacos gourmet">
+        <div class="article-body">
+          <p>Quando pensamos em buffets de pizza e culinária mexicana, a primeira associação costuma ser com refrigerantes ou cervejas pilsen comerciais. No entanto, o universo do live catering gourmet da Pizza Taco abre portas para combinações enológicas e cervejeiras ricas e surpreendentes.</p>
+          
+          <p>A harmonização correta realça a acidez dos tomates frescos, equilibra a gordura dos queijos nobres e suaviza a picância dos tacos mexicanos, transformando a refeição em uma verdadeira degustação guiada.</p>
+          
+          <h3>1. O Match Perfeito com Vinhos</h3>
+          <p>A acidez natural do molho de tomate artesanal e a presença do queijo nas pizzas pedem vinhos com acidez equilibrada e taninos macios:</p>
+          <ul>
+            <li><strong>Margherita e Vinho Chianti (ou Pinot Noir):</strong> A leveza do Pinot Noir ou o frutado de um Chianti italiano jovem combinam divinamente com o frescor do manjericão e da mozzarella.</li>
+            <li><strong>Picante Mexicano e Vinhos Carmenere ou Syrah:</strong> Carnes condimentadas e molhos de pimenta pedem tintos estruturados e com notas especiadas, como um Carmenere chileno ou um Syrah nacional.</li>
+            <li><strong>4 Queijos com Damasco e Espumante Brut:</strong> A cremosidade dos queijos e a doçura do damasco são perfeitamente limpas pela efervescência e acidez de um bom espumante Brut ou um vinho branco Chardonnay barricado.</li>
+          </ul>
+
+          <h3>2. Harmonizando com Cervejas Artesanais</h3>
+          <p>As cervejas artesanais possuem perfis de malte e lúpulo que conversam perfeitamente com a complexidade de texturas das nossas receitas:</p>
+          <ul>
+            <li><strong>Pepperoni com Mel e cervejas Pale Ale ou IPA:</strong> O amargor e as notas cítricas de uma India Pale Ale cortam a gordura e o picante do pepperoni, enquanto o malte caramelizado abraça a doçura do mel.</li>
+            <li><strong>Tacos de Carnitas/Picante e cerveja Witbier:</strong> Cervejas de trigo leves com toque de casca de laranja e coentro (estilo Witbier) ajudam a refrescar o paladar após a picância do jalapeño.</li>
+          </ul>
+
+          <blockquote>"A harmonização de bebidas premium traz um toque de sofisticação e cuidado que reflete diretamente no sucesso e lembrança do evento."</blockquote>
+
+          <p>Oferecer essas sugestões em um quadro na estação gastronômica ou treinar a equipe para recomendar as bebidas aos convidados eleva o buffet ao status de experiência gastronômica inesquecível.</p>
+        </div>
+      `
+    }
+  ];
+
+  // Render cards in grid dynamically
+  const blogContainer = document.getElementById('blog-posts-container');
+  if (blogContainer) {
+    blogContainer.innerHTML = blogPosts.map(post => `
+      <article class="blog-card reveal-element" data-post-id="${post.id}" role="button" tabindex="0" aria-label="Ler artigo: ${post.title}">
+        <div class="blog-card-image">
+          <span class="blog-card-badge">${post.category}</span>
+          <img src="${post.image}" alt="${post.title}">
+        </div>
+        <div class="blog-card-content">
+          <span class="blog-card-meta">${post.date} • ${post.readTime}</span>
+          <h3 class="blog-card-title">${post.title}</h3>
+          <p class="blog-card-excerpt">${post.excerpt}</p>
+          <span class="blog-card-link">
+            Ler Artigo Completo
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  // Modal Functionality
+  const blogModal = document.getElementById('blog-modal');
+  const blogModalContent = document.getElementById('blog-modal-content');
+  const blogModalClose = document.getElementById('blog-modal-close');
+  let lastFocusedElement = null;
+
+  function openArticle(postId) {
+    const post = blogPosts.find(p => p.id === postId);
+    if (!post || !blogModal || !blogModalContent) return;
+
+    // Save current active element for accessibility focus return
+    lastFocusedElement = document.activeElement;
+
+    // Set article content
+    blogModalContent.innerHTML = post.content;
+
+    // Show modal
+    blogModal.classList.add('open');
+    blogModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    // Add scroll reveal triggers to dynamically rendered content
+    const modalReveal = blogModalContent.querySelectorAll('.reveal-element');
+    modalReveal.forEach(el => el.classList.add('revealed'));
+
+    // Focus close button for accessibility
+    setTimeout(() => {
+      blogModalClose.focus();
+    }, 100);
+  }
+
+  function closeArticle() {
+    if (!blogModal) return;
+
+    blogModal.classList.remove('open');
+    blogModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore background scrolling
+
+    // Return focus to the element that triggered the modal
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  // Event Listeners for Cards
+  const blogCards = document.querySelectorAll('.blog-card');
+  blogCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const postId = card.getAttribute('data-post-id');
+      openArticle(postId);
+    });
+
+    // Handle Enter key for accessibility
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const postId = card.getAttribute('data-post-id');
+        openArticle(postId);
+      }
+    });
+  });
+
+  // Event Listeners for Modal Closing
+  if (blogModalClose) {
+    blogModalClose.addEventListener('click', closeArticle);
+  }
+
+  if (blogModal) {
+    // Close on clicking overlay background (outside card)
+    blogModal.addEventListener('click', (e) => {
+      if (e.target === blogModal) {
+        closeArticle();
+      }
+    });
+  }
+
+  // Handle Escape key to close modal
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && blogModal && blogModal.classList.contains('open')) {
+      closeArticle();
+    }
+  });
+
+  // Focus trap inside modal for keyboard navigation accessibility
+  window.addEventListener('keydown', (e) => {
+    if (blogModal && blogModal.classList.contains('open') && e.key === 'Tab') {
+      const focusableElements = blogModal.querySelectorAll('button, [tabindex="0"], a');
+      if (focusableElements.length > 0) {
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) { // Tab + Shift (backwards)
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else { // Tab (forwards)
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    }
+  });
+
+  // Add the newly rendered blog cards to IntersectionObserver if it exists
+  if ('IntersectionObserver' in window && window.revealObserver) {
+    const newCards = document.querySelectorAll('.blog-card.reveal-element');
+    newCards.forEach(el => window.revealObserver.observe(el));
+  } else {
+    const newCards = document.querySelectorAll('.blog-card.reveal-element');
+    newCards.forEach(el => el.classList.add('revealed'));
+  }
 });
