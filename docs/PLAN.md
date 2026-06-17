@@ -14,6 +14,7 @@ This project involves redesigning the existing landing page for "Pizza Taco Even
 4. All section layouts structured precisely: Navbar, Hero, Sobre Nós, Sabores slider, Eventos card, and Footer.
 5. Interactive features (Menu Tabs, Event Quiz, Polaroid Sandbox) fully functional and styled in the new visual theme.
 6. Responsive visual consistency on mobile, tablet, and desktop viewports.
+7. Modern scroll animations implemented: Smooth reveals (fade-in up) for typography/sections, slow parallax for background images (Hero and Chef), and dynamic horizontal scroll interaction for the "Sabores" section.
 
 ## Tech Stack
 - **Structure**: Semantic HTML5
@@ -125,6 +126,16 @@ Pizza Taco Eventos - LP/
 - **INPUT**: Reference content.
 - **OUTPUT**: Updated event handlers in `script.js`.
 - **VERIFY**: Click navigation links and test sliders to ensure smooth behavior.
+
+### Task 9: Implement Scroll Animations (Reveal & Parallax)
+- **Agent**: `frontend-specialist`
+- **Skills**: `frontend-design`
+- **Priority**: P2
+- **Dependencies**: Task 8
+- **Description**: Add smooth scroll reveal animations (fade-in upwards) to typography and cards using Intersection Observer, and implement subtle parallax effects for hero and chef background images.
+- **INPUT**: Existing HTML structure.
+- **OUTPUT**: CSS transition utility classes and JavaScript Observer logic in `script.js`.
+- **VERIFY**: Scroll down the page and verify that elements fade in smoothly and parallax works.
 
 ## Phase X: Final Verification
 - [ ] No purple/violet hex codes used (Purple Ban compliance).

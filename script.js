@@ -732,4 +732,35 @@ Gostaria de verificar a disponibilidade de datas!`;
     const newCards = document.querySelectorAll('.blog-card.reveal-element');
     newCards.forEach(el => el.classList.add('revealed'));
   }
+
+  // ==========================================
+  // 11. Subtle Parallax Effect for Backgrounds
+  // ==========================================
+  {
+    const heroImageParallax = document.querySelector('.hero-image-side');
+    const chefImageParallax = document.querySelector('.sobre-img-card img');
+    
+    window.addEventListener('scroll', () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      
+      const scrollY = window.scrollY;
+      
+      // Hero background Parallax
+      if (heroImageParallax) {
+        // Move background position slightly
+        heroImageParallax.style.backgroundPosition = `center ${scrollY * 0.4}px`;
+      }
+      
+      // Chef image Parallax (translate Y)
+      if (chefImageParallax) {
+        // Calculate position relative to viewport
+        const rect = chefImageParallax.parentElement.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const offset = (rect.top - window.innerHeight / 2) * 0.15;
+          chefImageParallax.style.transform = `translateY(${offset}px) scale(1.1)`;
+          chefImageParallax.style.transition = 'transform 0.1s ease-out';
+        }
+      }
+    }, { passive: true });
+  }
 });
